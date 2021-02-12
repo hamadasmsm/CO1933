@@ -4,7 +4,7 @@
 
 int main()
 {
-    float num1,num2,sum,sum1,sum2,sum3,sum4,sum5,next,deg,rad,rad1,rad2,rad3,rad4,rad5,sin,sin1,cos,cos1,tan,tan1, f=1,f1=1,f2=1,f3=1,f4=1,f5=1,f6=1,f7=1,f8=1,f9=1,f10=1,f11=1,f12=1,f13=1,f14=1,f16=1,f17=1,f18=1,f19=1,f20=1,f21=1,f22=1,f23=1,f24=1,pow,pow1,pow2,pow3,pow4,pow5,pow6,pow7,pow8,pow9,pow10,pow11,pow12,pow13,pow14,pow15,pow16,pow17,pow18,pow19,pow20,pow21,pow22,pow23;
+    float num1,num2,sum,sum1,sum2,sum3,sum4,sum5,next,deg,rad,rad1,rad2,rad3,rad4,rad5,sin,sin1,cos,cos1,tan,tan1, f=1,f1=1,f2=1,f3=1,f4=1,f5=1,pow,pow1,pow2,pow3,pow4,pow5,pow6,pow7,pow8,pow9,pow10,pow11,pow12,pow13,pow14,pow15,pow16,pow17,pow18,pow19,pow20,pow21,pow22,pow23;
     int operation=1,op;
     char n;
 
@@ -39,7 +39,7 @@ int main()
         printf("please enter the first number:\n");
         scanf("%f",&num1);
         printf("please enter the second number:\n");
-        scanf("%f",&3.num2);
+        scanf("%f",&num2);
         sum=num1+num2;
         printf("\nThe result of adding is: %0.2f \n\n",sum);
     }
