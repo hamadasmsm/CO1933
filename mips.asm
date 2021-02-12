@@ -47,13 +47,13 @@ main:
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               # code section
  li  $v0 , 4                                         # system call for print string
- la  $a0 , str                                # load address of string to print
+ la  $a0 , str                                # load address of str to print
 syscall  
  li  $v0 , 4                                         # system call for print string
- la  $a0 , str1                                # load address of string to print
+ la  $a0 , str1                                # load address of str1 to print
 syscall  
  li  $v0 , 4                                         # system call for print string
- la  $a0 , str2                                # load address of string to print
+ la  $a0 , str2                                # load address of str2 to print
 syscall 
 
  
@@ -78,44 +78,44 @@ move $s7, $v0
  li $a1,1               #f5 = 1
    
 start_loop5:
-       slti  $t7, $t0,3   #if $t0 less than or equal 3  make $t7 = 1 else make $t7= 0
-       beq $t7 ,0,start_loop6   # if $t7 = 0 jumb to loop next (start_loop6) else calculate f (t1)
+       slti  $t7, $t0,3   #if $t0(counter) less than or equal 3  make $t7 = 1 else make $t7= 0
+       beq $t7 ,0,start_loop6   # if $t7 = 0 jumb to loop next (start_loop6) else continue
        mul $t1,$t1,$t0      # multiple counter (i) and f (t1) 
-       addi $t0,$t0,1     # add t0 by 1  i+=1
+       addi $t0,$t0,1     # increment t0(counter) by 1  i+=1
        j start_loop5            #jump to start of loop     
 start_loop6:
        slti  $t7, $s0,5   #if $s0 less than or equal 5  make $t7 = 1 else make $t7= 0
-       beq $t7 ,0,start_loop7  # if $t7 = 0 jumb to loop next (start_loop7) else calculate f1 (t4)
+       beq $t7 ,0,start_loop7  # if $t7 = 0 jumb to loop next (start_loop7) else continue
        mul $t4,$t4,$s0      # multiple counter (i) and f1 (t4)
-       addi $s0,$s0,1    # add s0 by 1  i+=1
+       addi $s0,$s0,1    # increment s0 by 1  i+=1
        j start_loop6           #jump to start of loop
         
 start_loop7:
        slti  $t7, $s1,7   #if $s1 less than or equal 7  make $t7 = 1 else make $t7= 0
-       beq $t7 ,0, start_loop8 # if $t7 = 0 jumb to loop next (start_loop8) else calculate f2 (t5)
+       beq $t7 ,0, start_loop8 # if $t7 = 0 jumb to loop next (start_loop8) else continue
        mul $t5,$t5,$s1      # multiple counter (i) and f2 (t5)
-       addi $s1,$s1,1     # add s1 by 1  i+=1
+       addi $s1,$s1,1     #increment s1 by 1  i+=1
        j start_loop7           #jump to start of loop     
  
   start_loop8:
        slti  $t7, $s2,2   #if $s2 less than or equal 2  make $t7 = 1 else make $t7= 0
-       beq $t7 ,0,start_loop9 # if $t7 = 0 jumb to loop next (start_loop9) else calculate f3 (s6)
+       beq $t7 ,0,start_loop9 # if $t7 = 0 jumb to loop next (start_loop9) else continue
        mul $s6,$s6,$s2      # multiple counter (i) and f3 (s6)
-       addi $s2,$s2,1     # add s2 by 1  i+=1
+       addi $s2,$s2,1     # increment s2 by 1  i+=1
        
        j start_loop8        #jump to start of loop     
 start_loop9:
        slti  $t7, $s3,4   #if $s3 less than or equal 4  make $t7 = 1 else make $t7= 0
-       beq $t7 ,0,start_loop10  # if $t7 = 0 jumb to loop next (start_loop10) else calculate f4 (a0)
+       beq $t7 ,0,start_loop10  # if $t7 = 0 jumb to loop next (start_loop10) else continue
        mul $a0,$a0,$s3      # multiple counter (i) and f4 (a0)
-       addi $s3,$s3,1     # add s3 by 1  i+=1
+       addi $s3,$s3,1     #increment s3 by 1  i+=1
        j start_loop9           #jump to start of loop
         
 start_loop10:
        slti  $t7, $s4,6   #if $s4 less than or equal 6  make $t7 = 1 else make $t7= 0
-       beq $t7 ,0,Exit4    # if $t7 = 0 jumb to Exit loop (Exit4) else calculate f5 (a1)
+       beq $t7 ,0,Exit4    # if $t7 = 0 jumb to Exit loop (Exit4) else continue
        mul $a1,$a1,$s4    # multiple counter (i) and f5 (a1)
-       addi $s4,$s4,1     # add s3 by 1  i+=1
+       addi $s4,$s4,1     # increment s3 by 1  i+=1
        j start_loop10           #jump to start of loop  
  Exit4:        # Exit loop 
 
@@ -131,7 +131,7 @@ bne $s7 , 1 Else            # if $s7 != 1 jumb to Else else continue
   
 li $v0, 6                 # system call for scan float number
 syscall
-mov.s $f1 , $f0          #move  $f0 to $f1
+mov.s $f1 , $f0          #move  $f0(input) to $f1 (num1)
 
  li  $v0 , 4                # system call for print string
  la  $a0 , str4              #print string (str4)
@@ -140,7 +140,7 @@ mov.s $f1 , $f0          #move  $f0 to $f1
 
 li $v0, 6                        # system call for scan float number
 syscall
-mov.s $f2 , $f0                   #move  $f0 to $f2
+mov.s $f2 , $f0                   #move  $f0(input) to $f2(num2)
 
 
 
@@ -150,7 +150,7 @@ mov.s $f2 , $f0                   #move  $f0 to $f2
  
    
   li $v0 , 2               # system call for print float
- add.s $f12 , $f1 , $f2        #add two numbers ($f1 ,$f2) and print it in $f12
+ add.s $f12 , $f1 , $f2        #add two numbers ($f1(num1) ,$f2(num2)) and print it in $f12(result)
  syscall
  
  
@@ -161,7 +161,7 @@ mov.s $f2 , $f0                   #move  $f0 to $f2
  la  $a0 , str6              #print string (str6)
  syscall
 
-j Exit
+j Exit                          #jump to exit
 Else: 
 bne $s7 , 2  Else1               # if $s7 != 2 jump to Else1 else continue
 
@@ -176,7 +176,7 @@ bne $s7 , 2  Else1               # if $s7 != 2 jump to Else1 else continue
 li $v0, 6                  # Get an float value from user and  make $v0 = 6
 syscall
 
-mov.s $f1, $f0                   #move $f0 to $f1
+mov.s $f1, $f0                   #move $f0 (input)to $f1(num1)
    
  li  $v0 , 4               # system call for print string
  la  $a0 , str4                 #print string (str4)
@@ -184,10 +184,10 @@ mov.s $f1, $f0                   #move $f0 to $f1
  
  
 
-li $v0, 6             # Get an integer value from user and  make $v0 = 6
+li $v0, 6             # Get an float value from user and  make $v0 = 6
 syscall
 
-mov.s $f2, $f0            #move $f0 to $f2
+mov.s $f2, $f0            #move $f0(input) to $f2(num2)
 
  li  $v0 , 4              # system call for print string
  la  $a0 , sum              #print string (sum)
@@ -197,7 +197,7 @@ mov.s $f2, $f0            #move $f0 to $f2
  
                                       
   li  $v0 , 2                  # system call for print float
-  mul.s $f12 , $f1 , $f2        #multiply $f1 and $f2 and print it $f12
+  mul.s $f12 , $f1 , $f2        #multiply $f1(num1) and $f2 (num2)and print it $f12(result)
   syscall
   
   
@@ -221,7 +221,7 @@ mov.s $f2, $f0            #move $f0 to $f2
 li $v0, 6                    # Get an float value from user and  make $v0 = 6
 syscall                      
 
-mov.s $f1, $f0               #move $f0 (number) to $f1
+mov.s $f1, $f0               #move $f0 (input) to $f1(num1)
    
  li  $v0 , 4                # system call for print string
  la  $a0 , str4                #print string (str4)
@@ -232,7 +232,7 @@ mov.s $f1, $f0               #move $f0 (number) to $f1
 li $v0, 6              # Get an float value from user and make $v0 = 6
 syscall
 
-mov.s $f2 , $f0            #move $f0 to $f2
+mov.s $f2 , $f0            #move $f0(input) to $f2(numb2)
 
 
 
@@ -245,7 +245,7 @@ mov.s $f2 , $f0            #move $f0 to $f2
  
                                      
   li  $v0 , 2                     # system call for scan float number
- div.s $f12 , $f1 , $f2            #divide two numbers ($f1 , $f2) and print it in $f12
+ div.s $f12 , $f1 , $f2            #divide two numbers ($f1(num1) , $f2(num2)) and print it in $f12(result)
   syscall
   
   
@@ -269,7 +269,7 @@ mov.s $f2 , $f0            #move $f0 to $f2
 li $v0, 5    # Get an integer value from user   # Make $v0 = 5
 syscall
 
-move $a1, $v0      #move $v0 to $a1(parameter to function)
+move $a1, $v0      #move $v0(input) to $a1(parameter to function..sizeof array)
  
 
   jal min                  #call to function (min)
@@ -296,7 +296,7 @@ move $a1, $v0      #move $v0 to $a1(parameter to function)
  
  
   lwc1 $f4  ,  num                   #load word (num = 3.142) to $f4
-  lwc1 $f2 , num1                    #load word (num1 =180.0) to $f4
+  lwc1 $f2 , num1                    #load word (num1 =180.0) to $f2
   
    li $v0, 6                      # system call for scan float
     syscall
