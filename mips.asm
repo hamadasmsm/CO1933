@@ -1184,23 +1184,23 @@ jr $ra
 Triangle: 
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str25
+ la  $a0 , str25                                      #print string str25
  syscall
  
  
  
- li $v0, 5
+ li $v0, 5                                            # system call for scan integer
 syscall
-move $s1, $v0
+move $s1, $v0                                          #move v0(input)to s1(side1)
 
-li $v0, 5
+li $v0, 5                                         # system call for scan integer 
 syscall
-move $s2, $v0
+move $s2, $v0                                      # move v0(input)to s2(side2)
 
 
-li $v0, 5
+li $v0, 5                                            # system call for scan integer           
 syscall
-move $s3, $v0
+move $s3, $v0                                         #move v0(input)to s3(side3)
 
 
 add $t0 ,$s1 , $s2
@@ -1218,118 +1218,120 @@ beq  $t6 ,1,Else27
 
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str26
+ la  $a0 , str26                                     #print string str26
  syscall
-j Exit
+j Exit                                                #jump to exit
 Else22:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str27
+ la  $a0 , str27                                      #print string str27
  syscall
  
 
- j Exit
+ j Exit                                                 #jump to exit
 Else23:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str27
+ la  $a0 , str27                                      #print string str27
  syscall
  
- j Exit
+ j Exit                                                #jump to exit
 Else24:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str27
+ la  $a0 , str27                                     #print string str27
  syscall
- j Exit
+ j Exit                                              #jump to exit
+
 Else25:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str27
+ la  $a0 , str27                                      #print string str27
  syscall
- j Exit
-Else26:
+ j Exit                                              #jump to exit
+             
+Else26: 
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str27
+ la  $a0 , str27                                     #print string str27
  syscall
- j Exit
+ j Exit                                                #jump to exit
 Else27:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str27
+ la  $a0 , str27                                    #print string str27 
  syscall
- jr $ra
-Exit3:
+ jr $ra                                             #jump return valus
+Exit3:                                              #jump to exit
 
 
  
 
 
 Rectangle:
-li  $v0 , 4                                         # system call for print string
- la  $a0 , str28
+li  $v0 , 4                                         # system call for print string 
+ la  $a0 , str28                                    #print string str28
  syscall
  
  
  
- li $v0, 5
+ li $v0, 5                                         # system call for scan integer
 syscall
-move $s1, $v0
+move $s1, $v0                                     move v0(input)to s1(side1)
 
-li $v0, 5
+li $v0, 5                                          # system call for scan integer
 syscall
-move $s2, $v0
+move $s2, $v0                                      move v0(input)to s2(side2)
 
 
-li $v0, 5
+li $v0, 5                                          # system call for scan integer
 syscall
-move $s3, $v0
-li $v0, 5
+move $s3, $v0                                       move v0(input)to s3(side3)
+li $v0, 5                                           # system call for scan integer
 syscall
-move $s4, $v0
+move $s4, $v0                                       move v0(input)to s4(side4)                          
 
 
 
-bne $s1 ,$s3,Else28
-bne $s2 ,$s4,Else29
-beq  $s1 ,$s2,Else30
-beq $s3 ,$s4,Else31
+bne $s1 ,$s3,Else28                                 #branch ifs1 (side1) not equal s3(side3) 
+bne $s2 ,$s4,Else29                                  #branch if s2(side2) not equal s4 (side4) 
+beq  $s1 ,$s2,Else30                                 #branch ifs1 (side1)  equal s2(side2) 
+beq $s3 ,$s4,Else31                                    #branch ifs3 (side3)  equal s4(side4)
 
 
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str29
+ la  $a0 , str29                                     #print string str29
  syscall
-j Exit
+j Exit                                              jump to exit
 Else28:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str30
+ la  $a0 , str30                                       #print string str30
  syscall
  
- j Exit
+ j Exit                                               #jump to exit
 Else29:
 
-li  $v0 , 4                                         # system call for print string
- la  $a0 , str30
+li  $v0 , 4                                         # system call for print string                                                     
+ la  $a0 , str30                                    #print string str30
  syscall
  j Exit
 Else30:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str30
+ la  $a0 , str30                                     #print string str30
  syscall
  j Exit
 Else31:
 
 li  $v0 , 4                                         # system call for print string
- la  $a0 , str30
+ la  $a0 , str30                                      #print string str30
  syscall
  
- Exit2:
+ Exit2:                                          #jump to exit
  
-  jr $ra
+  jr $ra                                        #jump return value
   
   
 
