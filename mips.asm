@@ -1277,11 +1277,11 @@ li  $v0 , 4                                         # system call for print stri
  
  li $v0, 5                                         # system call for scan integer
 syscall
-move $s1, $v0                                     move v0(input)to s1(side1)
+move $s1, $v0                                   #  move v0(input)to s1(side1)
 
 li $v0, 5                                          # system call for scan integer
 syscall
-move $s2, $v0                                      move v0(input)to s2(side2)
+move $s2, $v0                                    #  move v0(input)to s2(side2)
 
 
 li $v0, 5                                          # system call for scan integer
@@ -1289,7 +1289,7 @@ syscall
 move $s3, $v0                                       move v0(input)to s3(side3)
 li $v0, 5                                           # system call for scan integer
 syscall
-move $s4, $v0                                       move v0(input)to s4(side4)                          
+move $s4, $v0                                     #  move v0(input)to s4(side4)                          
 
 
 
@@ -1303,7 +1303,7 @@ beq $s3 ,$s4,Else31                                    #branch ifs3 (side3)  equ
 li  $v0 , 4                                         # system call for print string
  la  $a0 , str29                                     #print string str29
  syscall
-j Exit                                              jump to exit
+j Exit                                             # jump to exit
 Else28:
 
 li  $v0 , 4                                         # system call for print string
